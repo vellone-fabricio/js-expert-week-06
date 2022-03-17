@@ -6,9 +6,9 @@ export default class TestUtil {
   static generateReadableStream(data) {
     return new Readable({
       read() {
-        data.forEach(item => {
+        for(const item of data) {
           this.push(item)
-        })
+        }
 
         this.push(null)
       }
